@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate
-        run: mkdir build && cd build && cmake ..
+        run: mkdir build && cd build && cmake -S ..
       - name: Build
         run: cd build && cmake --build .
