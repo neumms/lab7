@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: "create and enter build dir"
         run: |
-          mkdir build
-          cd build
+          ls
+          cd ..
       - name: "run cmake "
-        run: cmake ..
+        run: ls
       - name: "run make " 
-        run: make 
+        run: cd .. & ls
