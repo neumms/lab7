@@ -10,5 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate
+        run: mkdir build && cd build && cmake ..
       - name: Build
-        run: mkdir build && cmake --build build
+        run: cd build && cmake --build .
