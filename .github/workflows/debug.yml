@@ -10,7 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate
-        run: ls
-      - name: Build
-        run: cd build && cmake --build .
+      - uses: actions/checkout@v2
+      - name: "create and enter build dir"
+        run: |
+          mkdir build
+          cd build
+      - name: "run cmake "
+        run: cmake ..
+      - name: "run make " 
+        run: make 
