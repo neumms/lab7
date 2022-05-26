@@ -10,14 +10,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build CMake
-        uses: ashutoshvarma/action-cmake-build@v1
-        with:
-          cc: gcc
-          cxx: g++
-          build-type: Debug
-          run-test: false
-          # install the build using cmake --install
-          install-build: true
-          # run build using '-j [parallel]' to use multiple threads to build
-          parallel: 14
+      - name: Build
+        run: mkdir build && cd build && cmake .. && cmake --build .
