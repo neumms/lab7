@@ -10,7 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: configure
-      run: cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-Werror" -B build .
-    - name: Run Test
-      run: cd build && ./hello_test
+      - name: Build CMake
+        uses: ashutoshvarma/action-cmake-build@v1
+        with:
+          cc: gcc
+          cxx: g++
+          build-type: Debug
+          run-test: false
+          # install the build using cmake --install
+          install-build: true
+          # run build using '-j [parallel]' to use multiple threads to build
+          parallel: 14
